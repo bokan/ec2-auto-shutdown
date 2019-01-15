@@ -8,8 +8,8 @@ fi
 source /etc/ec2-auto-shutdown/ec2-auto-shutdown-config
 shutdown_after=`expr $shutdown_idle_minutes \* 60`
 ssh_max_idle_time=1
-instance_id=`ec2-metadata -i | sed 's/instance-id: \(.*\).$/\1/'`
-region=`ec2-metadata --availability-zone | sed 's/placement: \(.*\).$/\1/'`
+instance_id=`ec2metadata | sed 's/instance-id: \(.*\).$/\1/'`
+region=`ec2metadata --availability-zone | sed 's/placement: \(.*\).$/\1/'`
 last_activity=`date +%s`
 while true
 do
@@ -30,7 +30,7 @@ do
   since_last_activity=`expr $now - $last_activity`
   if [ "$since_last_activity" -gt "$shutdown_after" ]; then
     if [ "$idle" ]; then
-      /usr/sbin/shutdown now Shutdown initiated by ec2-auto-shutdown.
+      shutdown now Shutdown initiated by ec2-auto-shutdown.
       sleep 60
     fi
   fi

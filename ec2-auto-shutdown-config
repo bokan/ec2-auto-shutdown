@@ -1,3 +1,3 @@
 shutdown_idle_minutes=15
 avg_load_threshold=0.25
-
+PATH=/bin:/sbin:/usr/bin:/usr/local/bin:$PATH
