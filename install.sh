@@ -11,7 +11,7 @@
   config_install_path="/etc/ec2-auto-shutdown"
   systemd_service_unit_install_path="/etc/systemd/system"
 
-  github_url="https://raw.githubusercontent.com/bokan/ec2-auto-shutdown/master"
+  github_url="https://raw.githubusercontent.com/efang/ec2-auto-shutdown/master"
   service_path="/ec2-auto-shutdown"
   config_path="/ec2-auto-shutdown-config"
   systemd_service_unit_path="/ec2-auto-shutdown.service"
